@@ -1,0 +1,2 @@
+实例规格,vCPU,内存（GiB）,GPU,GPU显存,网络基础带宽（Gbit/s）,网络收发包PPS,多队列,弹性网卡,单网卡私有IPv4地址数,单网卡IPv6地址数
+ecs.ebmgn6i.24xlarge,96,384,NVIDIA T4 * 4,16GB * 4,30,450万,8,32,10,1
