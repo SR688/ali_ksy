@@ -1,7 +1,0 @@
-实例规格,vCPU,内存（GiB）,GPU,GPU显存,网络带宽基础/突发（Gbit/s）,网络收发包PPS,多队列,弹性网卡,单网卡私有IPv4地址数,单网卡IPv6地址数
-ecs.sgn7i-vws-m2.xlarge,4,15.5,NVIDIA A10 * 1/12,24GB * 1/12,1.5/5,50万,4,2,2,1
-ecs.sgn7i-vws-m4.2xlarge,8,31,NVIDIA A10 * 1/6,24GB * 1/6,2.5/10,100万,4,4,6,1
-ecs.sgn7i-vws-m8.4xlarge,16,62,NVIDIA A10 * 1/3,24GB * 1/3,5/20,200万,8,4,10,1
-ecs.sgn7i-vws-m2s.xlarge,4,8,NVIDIA A10 * 1/12,24GB * 1/12,1.5/5,50万,4,2,2,1
-ecs.sgn7i-vws-m4s.2xlarge,8,16,NVIDIA A10 * 1/6,24GB * 1/6,2.5/10,100万,4,4,6,1
-ecs.sgn7i-vws-m8s.4xlarge,16,32,NVIDIA A10 * 1/3,24GB * 1/3,5/20,200万,8,4,10,1

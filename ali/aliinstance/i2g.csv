@@ -1,5 +1,0 @@
-实例规格,vCPU,内存（GiB）,本地存储,网络基础带宽（Gbit/s）,网络收发包PPS
-ecs.i2g.2xlarge,8,32,1 * 959 GB（1 * 894 GiB）,2,100万
-ecs.i2g.4xlarge,16,64,1 * 1919 GB(1 * 1788 GiB),3,150万
-ecs.i2g.8xlarge,32,128,2 * 1919 GB(2 * 1788 GiB),6,200万
-ecs.i2g.16xlarge,64,256,4 * 1919 GB(4 * 1788 GiB),10,400万

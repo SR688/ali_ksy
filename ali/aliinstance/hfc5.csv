@@ -1,8 +1,0 @@
-实例规格,vCPU,内存（GiB）,网络基础带宽（Gbit/s）,网络收发包PPS,多队列,弹性网卡,单网卡私有IPv4地址数
-ecs.hfc5.large,2,4,1,30万,2,2,6
-ecs.hfc5.xlarge,4,8,1.5,50万,2,3,10
-ecs.hfc5.2xlarge,8,16,2,100万,2,4,10
-ecs.hfc5.3xlarge,12,24,2.5,130万,4,6,10
-ecs.hfc5.4xlarge,16,32,3,160万,4,8,20
-ecs.hfc5.6xlarge,24,48,4.5,200万,6,8,20
-ecs.hfc5.8xlarge,32,64,6,250万,8,8,20
