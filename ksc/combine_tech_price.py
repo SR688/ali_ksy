@@ -163,7 +163,7 @@ for spec_file in glob.glob(os.path.join(spec_dir, "*.csv")):
         price_df,
         on=["vCPU(个)", "内存容量(GB)"],
         how="left",
-        suffixes=("", "_price")
+        suffixes=("", "")
     )
 
     all_df.append(merged)
@@ -172,6 +172,24 @@ if not all_df:
     print("没有任何文件被合并！")
 else:
     summary = pd.concat(all_df, ignore_index=True)
+
+    # ---------- 检测同名列冲突 ----------
+    for col in summary.columns.unique():
+        same_cols = [c for c in summary.columns if c == col]
+        if len(same_cols) > 1:
+            # 逐行检测
+            conflict_rows = []
+            for idx, row in summary[same_cols].iterrows():
+                # 非空值去重
+                non_null_values = row.dropna().unique()
+                if len(non_null_values) > 1:
+                    conflict_rows.append((idx, list(row.values)))
+            if conflict_rows:
+                print(f"⚠ 列 '{col}' 存在冲突 {len(conflict_rows)} 行：")
+                for r in conflict_rows[:5]:  # 只显示前5行
+                    print(f"  行 {r[0]} -> {r[1]}")
+                if len(conflict_rows) > 5:
+                    print(f"  ... 还有 {len(conflict_rows) - 5} 行未显示")
 
     # 自动合并重复列（取非空值）
     final_df = pd.DataFrame()
@@ -193,5 +211,6 @@ else:
     cols = cols[:2] + ["family_id"] + cols[2:-1]  # -1 避免重复 family_id
     final_df = final_df[cols]
 
+    final_df = final_df.sort_values("套餐类型名")
     final_df.to_csv(output_file, index=False, encoding="utf-8-sig")
     print(f"已合并 {len(all_df)} 个文件，生成 {output_file}")
